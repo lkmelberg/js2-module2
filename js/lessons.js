@@ -251,3 +251,43 @@ const totalCost2 = products2.reduce((total, currentProduct) => {
 console.log(totalCost2);
 // Returns:
 // 170.95
+
+// find
+
+const users = [
+  { name: "Kari", id: 19313 },
+  { name: "Hans", id: 40202 },
+  { name: "Joakim", id: 59230 },
+  { name: "Inger", id: 14023 },
+  { name: "Ellen", id: 76339 },
+];
+
+const foundUser = users.find((user) => {
+  // Find a name with 'n' as the second letter
+  if (user.name[1].toLowerCase() === "n") {
+    return true;
+  }
+});
+
+// const foundUser = users.find(({ name }) => name[1].toLowerCase() === "n");
+
+console.log(foundUser);
+// Returns:
+// { name: "Inger", id: 14023 }
+
+const books = [
+  { title: "Building a Spaceship", inStock: false },
+  { title: "Growing Orchids", inStock: false },
+  { title: "River Fisher", inStock: true },
+];
+
+// Destructured the props and moved logic to the return
+const foundBook = books.find(({ inStock }) => inStock);
+
+if (!foundBook) {
+  console.log("No books in stock!");
+} else {
+  console.log("First book in stock:", foundBook);
+}
+// Returns:
+// No books in stock!
